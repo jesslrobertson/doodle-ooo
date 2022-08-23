@@ -1,13 +1,18 @@
 import React from 'react';
-import Canvas from './components/Canvas'
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from './components/Header'
+import AppRouter from './components/AppRouter'
 import './App.css';
+
 
 function App() {
   return (
-    <div className='App'>
-      <Canvas 
-      />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <AppRouter />
+      </div>
+    </Router>
   );
 }
 
