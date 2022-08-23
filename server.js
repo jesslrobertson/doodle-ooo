@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://jess-r-codes:fydhih-puTciz-5ketco@cluster0.dc6tc
 
 //routes
 app.use('/artwork', require('./routes/artRouter'))
-app.use('./prompts', require ('./routes/promptRouter'))
+app.use('/prompts', require ('./routes/promptRouter'))
 
 //error handler
 app.use((err, req, res, next) => {

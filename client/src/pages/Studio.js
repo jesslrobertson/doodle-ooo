@@ -6,18 +6,18 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Studio(){
   const notify = (message) => toast(message);
 
-  function promptify(array){
-    const objectArray = []
-    array.map(item => {
-      let object = {
-        "name": item
-      }
-      objectArray.push(object)
-    })
-    return objectArray
-  }
+  // function promptify(array){
+  //   const objectArray = []
+  //   array.map(item => {
+  //     let object = {
+  //       "name": item
+  //     }
+  //     objectArray.push(object)
+  //   })
+  //   return objectArray
+  // }
   
-  console.log(promptify(prompts))
+  // console.log(promptify(prompts))
 
   return (
     <div className="page studio">

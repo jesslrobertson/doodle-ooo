@@ -17,13 +17,14 @@ artRouter.get("/", (req, res, next) => {
 
 //POST one
 artRouter.post('/', (req, res, next) => {
+  console.log(req.body)
   const newArt = new Art(req.body)
   newArt.save((err, savedArt) => {
     if(err){
       res.status(500)
       return next(err)
     }
-    return res.status(201).send(savedInventory)
+    return res.status(201).send(savedArt)
   })
 })
 
