@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Menu from './Menu'
-import { Context } from "./Context"
+
 
 
 export default function Canvas(props){
@@ -12,7 +12,7 @@ export default function Canvas(props){
   const [brushSize, setBrushSize] = useState(4)
   const [brushColor, setBrushColor] = useState("000000")
   const [brushCoords, setBrushCoords] = useState({x: 0, y: 0})
-  const {alert, setAlert} = useContext(Context)
+  const { notify } = props
   
 
   // set context for canvas
@@ -67,9 +67,9 @@ export default function Canvas(props){
   function saveImage(){
     const canvas = canvasRef.current
     const savedUrl = canvas.toDataURL()
-    savedImages.push(savedUrl) && setAlert(true)
+    savedImages.push(savedUrl) 
+    notify("image saved")
     console.log(savedImages)
-    setTimeout(setAlert(false), 3000)
   }
 
   //clear the canvas

@@ -1,16 +1,17 @@
 import React from 'react'
 import Canvas from "../components/Canvas"
-import Alert from "../components/Alert"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function Studio(props){
-  const { setAlert } = Alert
+export default function Studio(){
+  const notify = (message) => toast(message);
 
   return (
     <div className="page studio">
-      <Alert />
       <h1>This is the Studio Page</h1>
+      <ToastContainer />
       <Canvas 
-        setAlert={setAlert}
+        notify={notify}
       />
     </div>
   )
