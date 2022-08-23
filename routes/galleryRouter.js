@@ -15,6 +15,7 @@ galleryRouter.get("/", (req, res, next) => {
 
 galleryRouter.post('/', (req, res, next) => {
     const newArt = new Artwork(req.body)
+    console.log(newArt)
     newArt.save((err, savedArtwork) => {
         if (err) {
             res.status(500)
