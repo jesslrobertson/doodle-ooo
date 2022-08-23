@@ -1,4 +1,4 @@
-require('dotenv').config()
+const dotenv = require('dotenv')
 console.log(process.env)
 const express = require('express')
 const app = express()
@@ -7,6 +7,7 @@ const morgan = require('morgan')
 
 
 dotenv.config()
+console.log(process.env.DB_USERNAME)
 
 //middleware
 app.use(express.json())
