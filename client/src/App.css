@@ -20,6 +20,18 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.alert {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: blue;
+  background-color: aliceblue;
+  z-index: 999;
+
+}
 /* Header Styles */
 .title {
   font-family: 'Cabin Sketch', cursive;
@@ -87,7 +99,8 @@
   background-color: aliceblue;
   justify-content: space-evenly;
   height: 480px;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin: 5px;
   /* justify-content: center; */
 }
 
