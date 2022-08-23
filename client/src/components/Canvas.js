@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Menu from './Menu'
+import axios from "axios"
 
 
 export default function Canvas(props){
