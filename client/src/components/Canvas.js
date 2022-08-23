@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Menu from './Menu'
-
-
+import axios from 'axios'
 
 export default function Canvas(props){
 
@@ -66,11 +65,16 @@ export default function Canvas(props){
   //save an image to the 'savedImages' array - soon to be a POST request
   function saveImage(){
     const canvas = canvasRef.current
-    const savedUrl = canvas.toDataURL()
-    savedImages.push(savedUrl) 
-    notify("image saved")
-    console.log(savedImages)
+    const Url = {"Url": `${canvas.toDataURL()}`}
+    console.log(Url)
+    axios.post("/gallery", Url )
+    .then(res => {
+      notify('Artwork Saved!')
+      console.log(res)
+    })
+    .catch(err => console.log(err))
   }
+
 
   //clear the canvas
   function clearCanvas(){
