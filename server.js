@@ -1,8 +1,12 @@
+require('dotenv').config()
+console.log(process.env)
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
-const { db } = require('./models/Art')
+
+
+dotenv.config()
 
 //middleware
 app.use(express.json())
@@ -10,7 +14,7 @@ app.use(morgan('dev'))
 
 //connect to database
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.dc6tcnp.mongodb.net/doodle-ooo?retryWrites=true&w=majority`, () => console.log("The Doodle server is running"))
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.dc6tcnp.mongodb.net/doodle-ooo?retryWrites=true&w=majority`, (x) => console.log(x))
 
 //routes
 app.use('/artwork', require('./routes/artRouter'))
