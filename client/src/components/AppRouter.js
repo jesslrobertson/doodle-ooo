@@ -4,7 +4,7 @@ import Home from "../pages/Home"
 import Gallery from '../pages/Gallery'
 import Studio from "../pages/Studio"
 
-export default function AppRouter(){
+export default function AppRouter(props){
   return (
     <Routes>
       <Route path='/' element={<Home />} />

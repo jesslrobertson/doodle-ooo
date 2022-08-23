@@ -3,15 +3,17 @@ import Menu from './Menu'
 import axios from "axios"
 
 
+
 export default function Canvas(props){
 
-  const {savedImages} = props
-  const canvasRef = useRef(null)
-  const ctxRef = useRef(null)
-  const [isDrawing, setIsDrawing ] = useState(false)
-  const [ brushSize, setBrushSize ] = useState(4)
+  const savedImages = []
+  const canvasRef = useRef()
+  const ctxRef = useRef()
+  const [isDrawing, setIsDrawing] = useState(false)
+  const [brushSize, setBrushSize] = useState(4)
   const [brushColor, setBrushColor] = useState("000000")
   const [brushCoords, setBrushCoords] = useState({x: 0, y: 0})
+  const { notify } = props
   
 
   // set context for canvas
@@ -62,6 +64,15 @@ export default function Canvas(props){
     setIsDrawing(false)
   }
 
+  //save an image to the 'savedImages' array - soon to be a POST request
+  function saveImage(){
+    const canvas = canvasRef.current
+    const savedUrl = canvas.toDataURL()
+    savedImages.push(savedUrl) 
+    notify("image saved")
+    console.log(savedImages)
+  }
+
   //clear the canvas
   function clearCanvas(){
     const canvas = canvasRef.current
@@ -71,28 +82,33 @@ export default function Canvas(props){
 
 
   return (
-    <div className='canvas-container'>
-      <Menu 
-        setBrushSize = {setBrushSize}
-        setBrushColor = {setBrushColor}
-      />
-      <canvas 
-        className="canvas"
-        id="canvas" 
-        width="800" 
-        height="500"
-        onMouseDown={(e) => startDrawing() }
-        onMouseUp={(e) => stopDrawing() }
-        onMouseMove={(e) => {handleMouseMove(e); draw(e)} }
-        ref={canvasRef}
+      <div className='canvas-container'>
+        <Menu 
+          setBrushSize = {setBrushSize}
+          setBrushColor = {setBrushColor}
+        />
+        <canvas 
+          className="canvas"
+          id="canvas" 
+          width="800" 
+          height="500"
+          onMouseDown={(e) => startDrawing() }
+          onMouseUp={(e) => stopDrawing() }
+          onMouseMove={(e) => {handleMouseMove(e); draw(e)} }
+          ref={canvasRef}
 
+          >
+        </canvas>
+        <button
+          onClick={clearCanvas}>
+            Clear
+        </button>
+        <button
+          onClick={saveImage}
         >
-      </canvas>
-      <button
-        onClick={clearCanvas}>
-          Clear
-      </button>
-    </div>
+          Save
+        </button>
+      </div>
   )
 
 }
