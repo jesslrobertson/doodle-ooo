@@ -2,13 +2,17 @@ const express = require("express")
 const app = express()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
+require("dotenv").config()
 
 app.use(express.json())
 app.use(morgan('dev'))
 
-mongoose.connect("mongodb://localhost:27017/surfshopdb", () => console.log('connected to database'))
+
+mongoose.connect("mongodb://localhost:27017/artstudio", () => console.log('connected to database'))
 
 app.use("/gallery", require("./routes/galleryRouter"))
+
+
 
 app.use((err, req, res, next) => {
     return res.send({ errMsg: err.message })
