@@ -67,8 +67,8 @@ export default function Canvas(props){
   //save an image to the 'savedImages' array - soon to be a POST request
   function saveImage(){
     const canvas = canvasRef.current
-    const savedUrl = `{"dataURL": "${canvas.toDataURL()}"}`
-    // console.log(savedUrl)
+    const savedUrl = {"dataURL": `${canvas.toDataURL()}`}
+    console.log(savedUrl)
     axios.post("/artwork", savedUrl )
     .then(res => {
       notify('Artwork Saved!')

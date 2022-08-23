@@ -17,7 +17,7 @@ artRouter.get("/", (req, res, next) => {
 
 //POST one
 artRouter.post('/', (req, res, next) => {
-  console.log(req.body)
+  console.log(`Req is: ${req}`)
   const newArt = new Art(req.body)
   newArt.save((err, savedArt) => {
     if(err){
