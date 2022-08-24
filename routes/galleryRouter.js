@@ -25,6 +25,17 @@ galleryRouter.post('/', (req, res, next) => {
     })
 })
 
+galleryRouter.delete("/:artId", (req, res, next) => {
+    Artwork.findOneAndDelete({_id: req.params.artId}, (err, item) => {
+        console.log(`Request body is ${req.body}`)
+        if(err){
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(`Successfully deleted ${item._id} from the database`)
+    })
+})
+
 
 module.exports = galleryRouter
 
