@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="header">
-      <h1 className="title">Doodle-ooo</h1>
+      <Link to="/" className="title-link">
+        <h1 className="title">Doodle-ooo</h1>
+      </Link>
       <div className="nav-container">
         <Link to="/" className="nav-link">
           Home

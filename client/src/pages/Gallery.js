@@ -21,7 +21,7 @@ export default React.memo(function Gallery() {
 
   return (
     <div className="gallery page">
-      <h2>Doodle Gallery</h2>
+      <h2 className='subtitle'>Doodle Gallery</h2>
       <div className="gallery-container">
         {galleryImages.map((image) => {
           const { _id, Url } = image;
