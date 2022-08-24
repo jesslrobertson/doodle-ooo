@@ -77,7 +77,6 @@ export default function Canvas(props) {
 
   return (
     <div className="canvas-container">
-      <Menu setBrushSize={setBrushSize} setBrushColor={setBrushColor} />
       <canvas
         className="canvas"
         id="canvas"
@@ -91,8 +90,12 @@ export default function Canvas(props) {
         }}
         ref={canvasRef}
       ></canvas>
-      <button onClick={clearCanvas}>Clear</button>
-      <button onClick={saveImage}>Save</button>
+        <Menu 
+          setBrushSize={setBrushSize} 
+          setBrushColor={setBrushColor} 
+          clearCanvas={clearCanvas}
+          saveImage={saveImage}
+          />
     </div>
   );
 }

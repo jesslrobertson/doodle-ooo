@@ -8,7 +8,7 @@ export default function Studio() {
 
   return (
     <div className="page studio">
-      <h1>This is the Studio Page</h1>
+      <h1 className="subtitle">Click and drag on the canvas to draw!</h1>
       <ToastContainer />
       <Canvas notify={notify} />
     </div>

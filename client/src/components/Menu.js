@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import eraser from "../resources/eraser.svg";
 
 export default function Menu(props) {
-  const { setBrushSize, setBrushColor } = props;
+  const { setBrushSize, setBrushColor, clearCanvas, saveImage } = props;
 
   function handleColor(color) {
     setBrushColor(color);
@@ -89,6 +89,10 @@ export default function Menu(props) {
         <div className="brush small-b" onClick={() => setBrushSize(2)} />
         <div className="brush medium-b" onClick={() => setBrushSize(5)} />
         <div className="brush large-b" onClick={() => setBrushSize(10)} />
+      </div>
+      <div className="button-box">
+        <button onClick={clearCanvas}>Clear</button>
+        <button onClick={saveImage}>Save</button>
       </div>
     </div>
   );
