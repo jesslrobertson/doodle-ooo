@@ -8,8 +8,7 @@ export default function Image(props){
     console.log(console.log(`delete request id is ${imgID}`))
     axios.delete(`/gallery/${imgID}`)
     .then(res => {
-      console.log(res.data)
-      setGalleryImages(prevImages => [...prevImages, res.data])
+      setGalleryImages(prevImages => prevImages.filter(image => image._id !== imgID))
     })
     .catch((err) => console.log(err))
   }
