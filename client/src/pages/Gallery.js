@@ -11,7 +11,6 @@ export default React.memo(function Gallery(){
       .then((res) => {
         const imgObjects = res.data
         setGalleryImages(imgObjects)
-        console.log(galleryImages)
       })
       .catch((err) => console.log(err))
     }
@@ -31,6 +30,7 @@ export default React.memo(function Gallery(){
             Url={Url}
             _id={_id}
             key={_id}
+            setGalleryImages={setGalleryImages}
             />
             )
           }
