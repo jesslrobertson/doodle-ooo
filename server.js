@@ -12,10 +12,11 @@ app.use(morgan('dev'))
 
 
 // mongoose.connect("mongodb://localhost:27017/artstudio", () => console.log('connected to database'))
-mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.dc6tcnp.mongodb.net/doodle-ooo?retryWrites=true&w=majority`, (x) => console.log(x))
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.dc6tcnp.mongodb.net/doodle-ooo?retryWrites=true&w=majority`, () => console.log("The Doodle-ooo server is running"))
 
 
 app.use("/gallery", require("./routes/galleryRouter"))
+app.use('/prompts', require ('./routes/promptRouter'))
 
 
 

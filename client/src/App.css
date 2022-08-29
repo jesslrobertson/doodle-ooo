@@ -73,8 +73,11 @@
 }
 
 /* text */
-.intro {
+.text {
   color: #173b62;
+}
+
+.intro {
   width: 50vw;
   margin-top: 20vh;
   font-size: clamp(1rem, -0.1250rem + 5.0000vw, 2.5rem);
@@ -242,6 +245,12 @@ button {
 	-moz-box-shadow: 0 0px 3px rgba(2, 100, 130, 0.3)  ; 
 }
 
+.prompt-box {
+  background-color:rgba(229, 31, 251, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
 /* footer */
 footer {
   height: 10rem;

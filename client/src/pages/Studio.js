@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Canvas from "../components/Canvas";
+import DrawingPrompt from "../components/DrawingPrompt"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -63,6 +64,7 @@ export default function Studio() {
       canvasHeight={canvasHeight}
       canvasWidth={canvasWidth}
       />
+      <DrawingPrompt />
     </div>
   );
 }
