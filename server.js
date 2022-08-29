@@ -16,6 +16,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 
 
 app.use("/gallery", require("./routes/galleryRouter"))
+app.use('/prompts', require ('./routes/promptRouter'))
 
 
 
