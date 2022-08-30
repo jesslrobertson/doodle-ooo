@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import eraser from "../resources/eraser.svg";
+import React from "react";
 
 export default function Menu(props) {
   const { setBrushSize, setBrushColor, clearCanvas, saveImage } = props;
 
   function handleColor(color) {
     setBrushColor(color);
-  }
-
-  function handleBrushSize(size) {
-    setBrushSize(size);
   }
 
   const colors = {

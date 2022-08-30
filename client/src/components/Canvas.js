@@ -3,7 +3,6 @@ import Menu from "./Menu";
 import axios from "axios";
 
 export default function Canvas(props) {
-  const savedImages = [];
   const canvasRef = useRef();
   const ctxRef = useRef();
   const [isDrawing, setIsDrawing] = useState(false);
@@ -73,7 +72,6 @@ export default function Canvas(props) {
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
-
 
   return (
     <div className="canvas-container">
