@@ -16,7 +16,12 @@ export default function Image(props) {
   }
   return (
     <div className="img-container">
-      <img src={Url} _id={_id} className="gallery-img" />
+      <img
+        src={Url}
+        _id={_id}
+        className="gallery-img"
+        alt="Drawing from Doodle-ooo studio"
+      />
       <button
         onClick={() => {
           removeImage(_id);
