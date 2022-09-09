@@ -42,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://api-doodle-ooo.cyclic.app/:8000"
+  "proxy": "https://api-doodle-ooo.cyclic.app/"
 }
