@@ -21,6 +21,7 @@ promptRouter.get("/", (req, res, next) => {
     }
     const count = items.length;
     const randomItem = Math.floor(Math.random() * count);
+    res.header("Access-Control-Allow-Origin", "*")
     return res.status(200).send(items[randomItem]);
   });
 });

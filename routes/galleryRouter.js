@@ -8,6 +8,7 @@ galleryRouter.get("/", (req, res, next) => {
       res.status(500);
       return next(err);
     }
+    res.header("Access-Control-Allow-Origin", "*")
     return res.status(200).send(items);
   });
 });
@@ -20,6 +21,7 @@ galleryRouter.post("/", (req, res, next) => {
       res.status(500);
       return next(err);
     }
+    res.header("Access-Control-Allow-Origin", "*")
     return res.status(201).send(savedArtwork);
   });
 });
@@ -31,6 +33,7 @@ galleryRouter.delete("/:artId", (req, res, next) => {
       res.status(500);
       return next(err);
     }
+    res.header("Access-Control-Allow-Origin", "*")
     return res
       .status(200)
       .send(`Successfully deleted ${item._id} from the database`);
