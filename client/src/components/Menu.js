@@ -7,10 +7,6 @@ export default function Menu(props) {
     setBrushColor(color);
   }
 
-  function handleBrushSize(size) {
-    setBrushSize(size);
-  }
-
   const colors = {
     red: "#ff0000",
     orange: "#ffa500",

@@ -1,6 +1,6 @@
-const express = require('express')
-const promptRouter = express.Router()
-const Prompt = require('../models/Prompt')
+const express = require("express");
+const promptRouter = express.Router();
+const Prompt = require("../models/Prompt");
 
 //add prompts to database
 // Prompt.insertMany(
@@ -14,18 +14,15 @@ const Prompt = require('../models/Prompt')
 // });
 
 promptRouter.get("/", (req, res, next) => {
-    Prompt.find((err, items) => {
-        if (err) {
-            res.status(500);
-            return next(err);
-          }
-        const count = items.length
-        const randomItem = Math.floor(Math.random() * count)
-        return res.status(200).send(items[randomItem]);
-        });
-      });
-      
-      
+  Prompt.find((err, items) => {
+    if (err) {
+      res.status(500);
+      return next(err);
+    }
+    const count = items.length;
+    const randomItem = Math.floor(Math.random() * count);
+    return res.status(200).send(items[randomItem]);
+  });
+});
 
-
-module.exports = promptRouter
+module.exports = promptRouter;

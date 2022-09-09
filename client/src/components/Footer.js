@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Footer(){
-
-  return(
+export default function Footer() {
+  return (
     <footer>
-      <a
-      href="https://github.com/jesslrobertson/doodle-ooo">Doodle-ooo on Github</a>
+      <a href="https://github.com/jesslrobertson/doodle-ooo">
+        Doodle-ooo on Github
+      </a>
     </footer>
-  )
+  );
 }
