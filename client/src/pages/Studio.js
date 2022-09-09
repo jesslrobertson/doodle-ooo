@@ -30,7 +30,7 @@ export default function Studio() {
     handleRatio();
   }, [dimensions]);
   function handleRatio() {
-    window.innerWidth < 500
+    window.innerWidth < 900
       ? setRatio({
           heightRatio: 0.75,
           widthRatio: 0.85,
@@ -49,9 +49,18 @@ export default function Studio() {
   });
 
   console.log(ratio);
+  
+  let canvasHeight
+  let canvasWidth
 
-  let canvasHeight = dimensions.height * ratio.heightRatio;
-  let canvasWidth = dimensions.width * ratio.widthRatio;
+  if (dimensions.innerWidth > 900){
+    canvasHeight = 600
+    canvasWidth = 800
+  } else {
+    canvasHeight = dimensions.height * ratio.heightRatio;
+    canvasWidth = dimensions.width * ratio.widthRatio;
+  }
+
 
   console.log(canvasHeight, canvasWidth);
 
