@@ -20,6 +20,6 @@ app.use((err, req, res, next) => {
   return res.send({ errMsg: err.message });
 });
 
-app.listen("8000", () => {
-  console.log("The server is running on port 8000");
+app.listen("https://api-doodle-ooo.cyclic.app/", () => {
+  console.log("The server is running on https://api-doodle-ooo.cyclic.app/");
 });
