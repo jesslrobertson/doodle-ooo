@@ -2,9 +2,9 @@
   "name": "doodle-ooo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "dev": "react-scripts-start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
