@@ -7,7 +7,7 @@ export default React.memo(function Gallery() {
 
   function getCollection() {
     axios
-      .get("/gallery")
+      .get("https://api-doodle-ooo.cyclic.app/gallery")
       .then((res) => {
         const imgObjects = res.data;
         setGalleryImages(imgObjects);

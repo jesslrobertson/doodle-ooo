@@ -6,7 +6,7 @@ export default function Image(props) {
 
   function removeImage(imgID) {
     axios
-      .delete(`/gallery/${imgID}`)
+      .delete(`https://api-doodle-ooo.cyclic.app/gallery/${imgID}`)
       .then((res) => {
         setGalleryImages((prevImages) =>
           prevImages.filter((image) => image._id !== imgID)

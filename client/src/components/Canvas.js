@@ -58,7 +58,7 @@ export default function Canvas(props) {
     const Url = { Url: `${canvas.toDataURL()}` };
     console.log(Url);
     axios
-      .post("/gallery", Url)
+      .post("https://api-doodle-ooo.cyclic.app/gallery", Url)
       .then((res) => {
         notify("Artwork Saved!");
         console.log(res);
