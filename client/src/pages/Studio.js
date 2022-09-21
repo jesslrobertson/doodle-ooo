@@ -46,7 +46,7 @@ export default function Studio() {
     return (_) => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleSize]);
 
   return (
     <div className="page studio">
