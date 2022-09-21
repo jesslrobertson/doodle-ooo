@@ -35,7 +35,7 @@ export default function Studio() {
           height: dimensions.height * 0.75,
           width: dimensions.width * 0.85,
         });
-  }, []);
+  }, [dimensions.height, dimensions.width]);
 
   useEffect(() => {
     handleSize();
