@@ -6,19 +6,8 @@
     from="/*"
     status=200 
     force = true
+    /api/*  https://doodle-ooo-api.cyclic.app/*  200
 [[headers]]
   for = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "*"
-
-
-    [[redirects]]
-  from = "/pathx"
-  to = "https://example.com/patha"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-[[headers]]
-  for = "/*"
-  [headers.values]
     Access-Control-Allow-Origin = "*"
