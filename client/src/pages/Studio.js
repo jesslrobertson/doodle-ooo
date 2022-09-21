@@ -10,11 +10,12 @@ export default function Studio() {
   //render canvas size based on screen size
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
-    width: window.innerWidth,
+    width: window.innerWidth
   });
-  const [ratio, setRatio] = useState({
-    heightRatio: 0.6,
-    widthRatio: 0.7,
+
+  const [canvasSize, setCanvasSize] = useState({
+    height: 600,
+    width: 800
   });
 
   function handleResize() {
@@ -24,36 +25,28 @@ export default function Studio() {
     });
   }
 
-  console.log(dimensions);
-
   useEffect(() => {
-    handleRatio();
+    handleSize();
   }, [dimensions]);
-  function handleRatio() {
-    window.innerWidth < 500
-      ? setRatio({
-          heightRatio: 0.75,
-          widthRatio: 0.85,
-        })
-      : setRatio({
-          heightRatio: 0.6,
-          widthRatio: 0.7,
-        });
-  }
+
+  function handleSize() {
+    window.innerWidth >= 900 ?
+      setCanvasSize({
+        height: 600,
+        width: 800
+      })
+      :setCanvasSize({
+        height: dimensions.height * 0.75,
+        width: dimensions.width * 0.85,
+      });
+    }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return (_) => {
       window.removeEventListener("resize", handleResize);
     };
-  });
-
-  console.log(ratio);
-
-  let canvasHeight = dimensions.height * ratio.heightRatio;
-  let canvasWidth = dimensions.width * ratio.widthRatio;
-
-  console.log(canvasHeight, canvasWidth);
+  }, []);
 
   return (
     <div className="page studio">
@@ -61,8 +54,8 @@ export default function Studio() {
       <ToastContainer />
       <Canvas
         notify={notify}
-        canvasHeight={canvasHeight}
-        canvasWidth={canvasWidth}
+        canvasHeight={canvasSize.height}
+        canvasWidth={canvasSize.width}
       />
       <DrawingPrompt />
     </div>

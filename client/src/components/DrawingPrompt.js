@@ -6,7 +6,7 @@ export default function DrawingPrompt() {
 
   function getPrompt() {
     axios
-      .get("/prompts")
+      .get("https://api-doodle-ooo.cyclic.app/prompts")
       .then((res) => {
         let lowerCasePrompt = res.data.name.toLowerCase();
         setPrompt(lowerCasePrompt);
