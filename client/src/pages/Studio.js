@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Canvas from "../components/Canvas";
 import DrawingPrompt from "../components/DrawingPrompt";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,36 +10,36 @@ export default function Studio() {
   //render canvas size based on screen size
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
-    width: window.innerWidth
+    width: window.innerWidth,
   });
 
   const [canvasSize, setCanvasSize] = useState({
     height: 600,
-    width: 800
+    width: 800,
   });
 
-  function handleResize() {
+  const handleResize = useCallback(() => {
     setDimensions({
       height: window.innerHeight,
       width: window.innerWidth,
     });
-  }
+  }, []);
+
+  const handleSize = useCallback(() => {
+    window.innerWidth >= 900
+      ? setCanvasSize({
+          height: 600,
+          width: 800,
+        })
+      : setCanvasSize({
+          height: dimensions.height * 0.75,
+          width: dimensions.width * 0.85,
+        });
+  }, []);
 
   useEffect(() => {
     handleSize();
   }, [handleSize]);
-
-  function handleSize() {
-    window.innerWidth >= 900 ?
-      setCanvasSize({
-        height: 600,
-        width: 800
-      })
-      :setCanvasSize({
-        height: dimensions.height * 0.75,
-        width: dimensions.width * 0.85,
-      });
-    }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
