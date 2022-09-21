@@ -87,7 +87,7 @@ export default function Menu(props) {
       </div>
       <div className="button-box">
         <button onClick={clearCanvas}>Clear</button>
-        <button onClick={saveImage}>Save</button>
+        <button onClick={() => saveImage()}>Save</button>
       </div>
     </div>
   );

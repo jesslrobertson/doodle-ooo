@@ -53,17 +53,17 @@ export default function Canvas(props) {
   }
 
   //save an image to the 'savedImages' array - soon to be a POST request
-  function saveImage() {
+  function saveImage(){
     const canvas = canvasRef.current;
     const Url = { Url: `${canvas.toDataURL()}` };
-    console.log(Url);
+    console.log("Axios request made");
     axios
       .post("https://api-doodle-ooo.cyclic.app/gallery", Url)
       .then((res) => {
         notify("Artwork Saved!");
-        console.log(res);
+        console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response.data))
   }
 
   //clear the canvas
