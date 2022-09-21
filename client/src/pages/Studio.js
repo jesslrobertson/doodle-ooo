@@ -27,7 +27,7 @@ export default function Studio() {
 
   useEffect(() => {
     handleSize();
-  }, [dimensions]);
+  }, [handleSize]);
 
   function handleSize() {
     window.innerWidth >= 900 ?
@@ -46,7 +46,7 @@ export default function Studio() {
     return (_) => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleSize]);
+  }, [handleResize]);
 
   return (
     <div className="page studio">
